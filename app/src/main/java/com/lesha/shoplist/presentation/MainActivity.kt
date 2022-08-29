@@ -10,6 +10,8 @@ import com.lesha.shoplist.R
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
+
+    private var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,7 +19,5 @@ class MainActivity : AppCompatActivity() {
         viewModel.shopList.observe(this){
             Log.d("MainActivityTest",it.toString())
         }
-        viewModel.getShopList()
-
     }
 }

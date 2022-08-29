@@ -1,11 +1,14 @@
 package com.lesha.shoplist.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.lesha.shoplist.domain.ShopItem
 import com.lesha.shoplist.domain.ShopListRepository
 import java.lang.RuntimeException
 
 object ShopListRepositoryImpl : ShopListRepository {
 
+    private val shopListLD = MutableLiveData<List<ShopItem>>()
     private val shopList = mutableListOf<ShopItem>()
 
     private var autoIncrementId = 0
@@ -22,15 +25,17 @@ object ShopListRepositoryImpl : ShopListRepository {
             shopItem.id = autoIncrementId++
         }
         shopList.add(shopItem)
+        updateList()
     }
 
     override fun removeShopItem(shopItem: ShopItem) {
         shopList.remove(shopItem)
+        updateList()
     }
 
     override fun editShopItem(shopItem: ShopItem) {
         val oldItem = getShopItem(shopItem.id)
-        removeShopItem(oldItem)
+        shopList.remove(oldItem)
         addShopItem(shopItem)
     }
 
@@ -38,8 +43,12 @@ object ShopListRepositoryImpl : ShopListRepository {
         return shopList.find { it.id == shopItemId } ?: throw RuntimeException("Shop item with id $shopItemId not found")
     }
 
-    override fun getShopList(): List<ShopItem> {
-        return shopList.toList()
+    override fun getShopList(): LiveData<List<ShopItem>> {
+        return shopListLD
+    }
+
+    private fun updateList(){
+        shopListLD.value = shopList.toList()
     }
 
 }
