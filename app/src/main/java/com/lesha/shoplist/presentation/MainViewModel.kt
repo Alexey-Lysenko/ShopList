@@ -1,6 +1,5 @@
 package com.lesha.shoplist.presentation
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.lesha.shoplist.data.ShopListRepositoryImpl
 import com.lesha.shoplist.domain.EditShopItemUseCase
