@@ -25,6 +25,9 @@ class MainViewModel: ViewModel() {
     fun changeEnableState(shopItem: ShopItem){
         val newItem = shopItem.copy(enabled = !shopItem.enabled)
         editShopItemUseCase.editShopItem(newItem)
+    }
 
+    fun editShopItem(shopItem: ShopItem){
+        editShopItemUseCase.editShopItem(shopItem)
     }
 }
