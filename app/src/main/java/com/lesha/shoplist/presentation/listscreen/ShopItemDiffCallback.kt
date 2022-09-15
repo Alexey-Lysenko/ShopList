@@ -1,7 +1,7 @@
-package com.lesha.shoplist.presentation
+package com.lesha.shoplist.presentation.listscreen
 
 import androidx.recyclerview.widget.DiffUtil
-import com.lesha.shoplist.domain.ShopItem
+import com.lesha.shoplist.domain.model.ShopItem
 
 class ShopItemDiffCallback: DiffUtil.ItemCallback<ShopItem>() {
     override fun areItemsTheSame(oldItem: ShopItem, newItem: ShopItem): Boolean {

@@ -1,12 +1,12 @@
-package com.lesha.shoplist.presentation
+package com.lesha.shoplist.presentation.listscreen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.lesha.shoplist.R
-import com.lesha.shoplist.domain.ShopItem
+import com.lesha.shoplist.domain.model.ShopItem
 
-class ShopListAdapter : ListAdapter<ShopItem,ShopIemViewHolder>(ShopItemDiffCallback()) {
+class ShopListAdapter : ListAdapter<ShopItem, ShopIemViewHolder>(ShopItemDiffCallback()) {
 
     var onShopItemLongClickListener:((ShopItem)-> Unit)? = null
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null

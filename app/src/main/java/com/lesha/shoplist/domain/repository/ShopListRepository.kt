@@ -1,6 +1,7 @@
-package com.lesha.shoplist.domain
+package com.lesha.shoplist.domain.repository
 
 import androidx.lifecycle.LiveData
+import com.lesha.shoplist.domain.model.ShopItem
 
 interface ShopListRepository {
 

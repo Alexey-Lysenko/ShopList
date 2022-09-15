@@ -1,4 +1,4 @@
-package com.lesha.shoplist.presentation
+package com.lesha.shoplist.presentation.listscreen
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
