@@ -2,4 +2,10 @@
     <string name="app_name">ShopList</string>
 
     <string name="add_shop_item_button_content_description">Add new item</string>
+
+
+    <!--ShopItemActivity-->
+    <string name="shop_item_activity_hint_name">Name:</string>
+    <string name="shop_item_activity_hint_count">Count:</string>
+    <string name="shop_item_activity_btn_save">SAVE</string>
 </resources>
