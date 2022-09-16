@@ -2,8 +2,8 @@ package com.lesha.shoplist.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.lesha.shoplist.domain.ShopItem
-import com.lesha.shoplist.domain.ShopListRepository
+import com.lesha.shoplist.domain.model.ShopItem
+import com.lesha.shoplist.domain.repository.ShopListRepository
 import kotlin.random.Random
 
 object ShopListRepositoryImpl : ShopListRepository {

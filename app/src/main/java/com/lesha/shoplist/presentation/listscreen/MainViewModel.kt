@@ -1,12 +1,11 @@
-package com.lesha.shoplist.presentation
+package com.lesha.shoplist.presentation.listscreen
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.lesha.shoplist.data.ShopListRepositoryImpl
-import com.lesha.shoplist.domain.EditShopItemUseCase
-import com.lesha.shoplist.domain.GetShopListUseCase
-import com.lesha.shoplist.domain.RemoveShopItemUseCase
-import com.lesha.shoplist.domain.ShopItem
+import com.lesha.shoplist.domain.usecase.EditShopItemUseCase
+import com.lesha.shoplist.domain.usecase.GetShopListUseCase
+import com.lesha.shoplist.domain.usecase.RemoveShopItemUseCase
+import com.lesha.shoplist.domain.model.ShopItem
 
 class MainViewModel: ViewModel() {
 

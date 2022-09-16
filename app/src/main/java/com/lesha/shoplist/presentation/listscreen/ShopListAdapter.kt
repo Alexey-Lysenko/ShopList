@@ -1,27 +1,15 @@
-package com.lesha.shoplist.presentation
+package com.lesha.shoplist.presentation.listscreen
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.lesha.shoplist.R
-import com.lesha.shoplist.domain.ShopItem
+import com.lesha.shoplist.domain.model.ShopItem
 
-class ShopListAdapter : ListAdapter<ShopItem,ShopListAdapter.ShopIemViewHolder>(ShopItemDiffCallback()) {
+class ShopListAdapter : ListAdapter<ShopItem, ShopIemViewHolder>(ShopItemDiffCallback()) {
 
     var onShopItemLongClickListener:((ShopItem)-> Unit)? = null
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null
-
-    class ShopIemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val shopItemName: TextView = view.findViewById(R.id.shop_item_name)
-        val shopItemCount: TextView = view.findViewById(R.id.shop_item_count)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopIemViewHolder {
         val layout = when (viewType) {
@@ -43,7 +31,6 @@ class ShopListAdapter : ListAdapter<ShopItem,ShopListAdapter.ShopIemViewHolder>(
         }
         holder.itemView.setOnClickListener{
             onShopItemClickListener?.invoke(shopItem)
-            true
         }
     }
 
@@ -54,18 +41,6 @@ class ShopListAdapter : ListAdapter<ShopItem,ShopListAdapter.ShopIemViewHolder>(
         } else {
             DISABLED_ITEM_TYPE
         }
-    }
-
-    override fun onViewRecycled(holder: ShopIemViewHolder) {
-        super.onViewRecycled(holder)
-        holder.shopItemName.text = ""
-        holder.shopItemCount.text =""
-        holder.shopItemName.setTextColor(
-            ContextCompat.getColor(
-                holder.itemView.context,
-                android.R.color.white
-            )
-        )
     }
 
     companion object {

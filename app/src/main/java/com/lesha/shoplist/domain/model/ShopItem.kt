@@ -1,4 +1,4 @@
-package com.lesha.shoplist.domain
+package com.lesha.shoplist.domain.model
 
 data class ShopItem(
     val name: String,
